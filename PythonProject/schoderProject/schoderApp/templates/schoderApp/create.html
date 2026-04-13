@@ -1,0 +1,18 @@
+{% extends 'schoderApp/base.html' %}
+
+{% block title  %}
+    Создать таск
+{% endblock %}
+
+{% block content  %}
+    <h1>Создать такс</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.task }}
+        <input type="text" placeholder="Введите текст" class="form-control"><br>
+        <textarea placeholder="Введите описание" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <span>{{error }}</span>
+    </form>
+{% endblock %}
